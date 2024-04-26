@@ -13,7 +13,7 @@ export async function authenticate(
   })
 
   const { email, password } = authenticateBodySchema.parse(request.body)
-  console.log(email)
+
   try {
     const authenticateUseCase = makeAuthenticateUseCase()
 
