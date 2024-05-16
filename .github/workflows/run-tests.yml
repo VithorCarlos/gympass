@@ -6,7 +6,7 @@ on: [push]
 jobs:
   run-integrations-tests:
     name: Run Integrations Tests
-    runs-on: unbutu-latest
+    runs-on: ubutu-latest
 
     steps:
       - uses: actions/checkout@v4
