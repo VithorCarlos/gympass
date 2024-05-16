@@ -12,7 +12,7 @@ RUN npm install
 
 EXPOSE 3333
 
-RUN npx prisma migrate reset
+#RUN npx prisma migrate reset
 
 RUN npx prisma generate
 
