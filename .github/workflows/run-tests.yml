@@ -6,7 +6,7 @@ on: [push]
 jobs:
   run-integrations-tests:
     name: Run Integrations Tests
-    run-on: unbutu-latest
+    runs-on: unbutu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -16,5 +16,4 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-
       - run: npm run test
