@@ -6,7 +6,7 @@ on: [push]
 jobs:
   run-integrations-tests:
     name: Run Integrations Tests
-    runs-on: ubutu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
