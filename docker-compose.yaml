@@ -1,0 +1,35 @@
+version: '3.8'
+services: 
+  db:
+    container_name: postgres
+    image: bitnami/postgresql
+    volumes:
+      - db_vol:/var/lib/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+    environment:
+      - POSTGRESQL_DATABASE=apisolid
+      - POSTGRESQL_USERNAME=root
+      - POSTGRESQL_PASSWORD=root
+  api: 
+    container_name: api_gym
+    build: 
+      context: .
+    environment:
+      - PORT=3333
+    depends_on:
+      - db
+    ports:
+      - 3333:3333
+    networks:
+      - backend
+    command: npm run start
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  db_vol:
