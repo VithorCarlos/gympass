@@ -11,7 +11,7 @@ Application developed to do check-ins at gyms. I've learned so many concepts abo
 
 1: Change the DATABASE_URL in your .env to: `postgresql://root:root@db:5432/apisolid?schema=public`
 
-2: Run the following command on CMD: `npm install && docker-compose up -d && npm run dev`
+2: Run the following command on CMD: `npm install && docker-compose up -d`
 
 3: On CMD App Root, execute these following steps: 
 
