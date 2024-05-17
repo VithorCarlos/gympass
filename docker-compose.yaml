@@ -4,7 +4,7 @@ services:
     container_name: postgres
     image: bitnami/postgresql
     volumes:
-      - db_vol:/var/lib/postgres
+      - db_vol:/var/lib/postgres/data
     ports:
       - 5432:5432
     networks:
@@ -17,15 +17,17 @@ services:
     container_name: api_gym
     build:
       context: .
-    environment:
-      - PORT=3333
     depends_on:
       - db
+    environment:
+      - PORT=3000
     ports:
-      - 3333:3333
+      - 3000:3000
+    volumes:
+      - api_vol:/var/lib/api
     networks:
       - backend
-    command: ["npm", "run", "start"]
+    command: node build/server.js
 
 networks:
   backend:
@@ -33,3 +35,4 @@ networks:
 
 volumes:
   db_vol:
+  api_vol:
