@@ -17,7 +17,7 @@ Application developed to do check-ins at gyms. I've learned so many concepts abo
 
   3.1 - `docker exec -it api_gym /bin/sh`
   
-  3.2 - `npx prisma migration deploy`
+  3.2 - `npx prisma migrate deploy`
   
   3.3 - `exit`
 
